@@ -25,7 +25,6 @@ conda install sentence-transformers transformers accelerate ray hpbandster confi
 ```
 
 <br>
-<br>
 
 ## Data pre-processing
 E.g. for generating training data for ECtHR, try:
@@ -39,7 +38,6 @@ python preparation/preprocess_data.py \
 Valid arguments for dataset: ecthr, scotus (, mimic available only for huggingface users with access)
 
 <br>
-<br>
 
 ## Domain-adapted Longformer
 For domain-adaption of Longformer using Legal-BERT (small) and BioBERT (medium), try:
@@ -49,7 +47,6 @@ python preparation/convert_bert_to_longformer.py \
 --save_directory_legal='legal_longformer' \
 ```
 
-<br>
 <br>
 
 ## Training and Evaluation
@@ -75,7 +72,6 @@ Valid arguments for loss_name: simcse, simcse_hilbert (for One-branch), simcse_h
 Valid arguments for data_type: doc_doc (for One-branch using documents), par_par (for One-branch using paragraphs), 2branch (for Two-branch)
 
 <br>
-<br>
 
 ### Training
 E.g. for only training the ConvMixer on Cifar-100 using the Modified Debiased Contrastive Loss and Clustering Loss, try:
@@ -92,7 +88,6 @@ python train.py \
 ```
 
 <br>
-<br>
 
 ### Evaluation: Linear Classification
 For only training a linear classifier on top of the frozen backbone network and evaluation, enter the path to the trained model and try:
@@ -101,7 +96,6 @@ python linear_evaluation.py \
 --dataset='ecthr' --path_model='' --path_output='output' --eval_num_epochs=20 --eval_learning_rate=3e-5
 ```
 
-<br>
 <br>
 
 ### Acknowledgements
