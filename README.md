@@ -73,7 +73,7 @@ Valid arguments for data_type: doc_doc (for One-branch using documents), par_par
 
 <br>
 
-### Training
+## Training
 E.g. for only training the ConvMixer on Cifar-100 using the Modified Debiased Contrastive Loss and Clustering Loss, try:
 ```
 python train.py \
@@ -89,7 +89,7 @@ python train.py \
 
 <br>
 
-### Evaluation: Linear Classification
+## Evaluation: Linear Classification
 For only training a linear classifier on top of the frozen backbone network and evaluation, enter the path to the trained model and try:
 ```
 python linear_evaluation.py \
@@ -98,5 +98,5 @@ python linear_evaluation.py \
 
 <br>
 
-### Acknowledgements
+## Acknowledgements
 The code is based on the work of [Ilias Chalkidis](https://github.com/iliaschalkidis), [Mina Rezaei](https://github.com/MinaRe), and [Daniel Saggau](https://github.com/danielsaggau).
