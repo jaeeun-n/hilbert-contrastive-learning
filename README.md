@@ -1,4 +1,4 @@
-Improving Self-Supervised Representation Learning via Non-Euclidean Geometry
+Hyperbolic Contrastive Learning for Document Representations
 ---------------------------------------------------------------
 
 
