@@ -100,3 +100,15 @@ python linear_evaluation.py \
 
 ## Acknowledgements
 The code is based on the work of [Ilias Chalkidis](https://github.com/iliaschalkidis), [Mina Rezaei](https://github.com/MinaRe), and [Daniel Saggau](https://github.com/danielsaggau).
+
+<br>
+
+## How to cite 
+Please cite [our paper published in ECAI](https://ebooks.iospress.nl/doi/10.3233/FAIA240673):
+
+Nam, J., Chalkidis, I., & Rezaei, M. (2024). 
+Hyperbolic Contrastive Learning for Document Representations - A Multi-View Approach with
+Paragraph-level Similarities. 
+ECAI 2024: Proceedings of the 27th European Conference on Artificial Intelligence.
+https://doi.org/10.3233/FAIA240673
+
