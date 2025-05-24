@@ -48,9 +48,9 @@ def convert_bert_to_longformer(checkpoint, window_size, save_directory):
         else:
             lf_model.longformer.embeddings.position_embeddings.weight.data[k:(k + step)] = bert_model.bert.embeddings.position_embeddings.weight[1:]
         k += step
-    lf_model.longformer.embeddings.word_embeddings.load_state_dict(bert_model.bert.embeddings.word_embeddings.state_dict())
-    lf_model.longformer.embeddings.token_type_embeddings.load_state_dict(bert_model.bert.embeddings.token_type_embeddings.state_dict())
-    lf_model.longformer.embeddings.LayerNorm.load_state_dict(bert_model.bert.embeddings.LayerNorm.state_dict())
+    lf_model.longformer.embeddings.word_embeddings.load_state_dict(bert_model.bert.embeddings.word_embeddings.state_dict(), weights_only=True)
+    lf_model.longformer.embeddings.token_type_embeddings.load_state_dict(bert_model.bert.embeddings.token_type_embeddings.state_dict(), weights_only=True)
+    lf_model.longformer.embeddings.LayerNorm.load_state_dict(bert_model.bert.embeddings.LayerNorm.state_dict(), weights_only=True)
 
     # copy transformer layers
     for i in range(len(bert_model.bert.encoder.layer)):
@@ -82,9 +82,9 @@ def convert_bert_to_longformer(checkpoint, window_size, save_directory):
             bert_model.bert.encoder.layer[i].attention.self.value)
 
     # copy lm_head
-    lf_model.lm_head.dense.load_state_dict(bert_model.cls.predictions.transform.dense.state_dict())
-    lf_model.lm_head.layer_norm.load_state_dict(bert_model.cls.predictions.transform.LayerNorm.state_dict())
-    lf_model.lm_head.decoder.load_state_dict(bert_model.cls.predictions.decoder.state_dict())
+    lf_model.lm_head.dense.load_state_dict(bert_model.cls.predictions.transform.dense.state_dict(), weights_only=True)
+    lf_model.lm_head.layer_norm.load_state_dict(bert_model.cls.predictions.transform.LayerNorm.state_dict(), weights_only=True)
+    lf_model.lm_head.decoder.load_state_dict(bert_model.cls.predictions.decoder.state_dict(), weights_only=True)
     lf_model.lm_head.bias = copy.deepcopy(bert_model.cls.predictions.bias)
 
     # check position ids
